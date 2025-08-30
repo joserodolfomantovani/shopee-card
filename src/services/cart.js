@@ -1,16 +1,22 @@
-async function addItem(useCart){
+async function addItem(userCart,item){
+  userCart.push(item)
+}
+
+async function deleteItem(userCart, name){
 
 }
 
-async function deleteItem(useCart, name){
-
-}
-
-async function removeItem(useCart, index) {
+async function removeItem(userCart, index) {
     
 }
 
-async function calculateTotal(useCart) {
-    
-    
+async function calculateTotal(userCart) {
+    return userCart.reduce((total, item) => total + item.subTotal(), 0)
+}
+
+export{
+    addItem,
+    calculateTotal,
+    deleteItem,
+    removeItem
 }
