@@ -15,13 +15,23 @@ async function removeItem(userCart, index) {
 
 async function calculateTotal(userCart) {
    const result = userCart.reduce((total, item) => total + item.subtotal(), 0)
-   console.log(result);
+   console.log(`\n🎁 Total: ${result}`);
    
+}
+async function displaycart(userCart) {
+  console.log("\n Shoppe cart list");
+  userCart.forEach((item, index) => {
+    console.log(`${index+1}. ${item.name} - R$ ${item.price}  | ${item.quantity}x | Subtotal =  ${item.subtotal()}`);
+    
+    
+  });
+  
 }
 
 export{
     addItem,
     calculateTotal,
     deleteItem,
-    removeItem
+    removeItem,
+    displaycart
 }
