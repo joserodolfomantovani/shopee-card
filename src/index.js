@@ -1,4 +1,4 @@
-import { addItem, calculateTotal } from "./services/cart.js";
+import { addItem, calculateTotal, deleteItem } from "./services/cart.js";
 import createItem from "./services/item.js"
 
 const myCart = []
@@ -10,7 +10,11 @@ const item1 = await createItem("hotwheels ferrari", 20.99, 1)
 const item2 =  await createItem("hotwheels lamborghini", 39.99, 3)
 
 await addItem(myCart, item1)
+await addItem(myCart, item2)
 await addItem(myWhishList, item2)
+
+await deleteItem(myCart, item2.name)
+await deleteItem(myCart, item1.name)
 
 console.log("Shopee Cart Total is ");
 await calculateTotal(myCart)
